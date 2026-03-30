@@ -39,7 +39,10 @@ function parseStoredPrompts(raw: string | null): PromptItem[] | null {
 }
 
 export function usePrompts(seed: PromptItem[] = []) {
-  const initial = parseStoredPrompts(localStorage.getItem(STORAGE_KEY)) ?? seed;
+  const stored = parseStoredPrompts(localStorage.getItem(STORAGE_KEY));
+  const initial = stored
+    ? [...stored, ...seed.filter((seedItem) => !stored.some((item) => item.id === seedItem.id))]
+    : seed;
   const prompts = ref<PromptItem[]>(initial);
 
   watch(
