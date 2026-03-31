@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr:*)",
+      "Bash(where gh:*)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Bash(cmd /c \"where gh\")",
+      "Bash(cmd /c \"gh --version\")",
+      "Read(//c/Users/Administrator/AppData/Local/Programs/**)",
+      "Read(//c//**)",
+      "Bash(find /c -name gh.exe)",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\'',''D:\\\\'' -Recurse -Filter ''gh.exe'' -ErrorAction SilentlyContinue | Select-Object -First 5 FullName\")",
+      "Bash(powershell -Command \"scoop which gh; winget list GitHub.cli\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\Users\\\\Administrator'' -Recurse -Filter ''gh.exe'' -ErrorAction SilentlyContinue | Select-Object -First 3 FullName\")"
+    ]
+  }
+}
